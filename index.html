@@ -5,16 +5,19 @@
     <title>Vesta Revealed</title>
     <meta name="description" content="Vesta Revealed">
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+    <script src="./lib/movement.js"></script>
   </head>
   <body>
-    <a-scene >
+    <a-scene>
       <a-assets>
         <img src="./images/space.png" id="space">
         <a-asset-item id="vesta-mtl" src="./images/vesta.mtl"></a-asset-item>
         <a-asset-item id="vesta-obj" src="./images/vesta.obj"></a-asset-item>
       </a-assets>
 
-      <a-entity obj-model="obj: #vesta-obj; mtl: #vesta-mtl" position="0 1.5 0"></a-entity>
+      <a-camera id="camera" sphere-move position="0 3 0" look-at="0 0.5 2"></a-camera> 
+
+      <a-entity id="vesta" obj-model="obj: #vesta-obj; mtl: #vesta-mtl" position="0 0 0"></a-entity>
 
       <a-light type="point" position="0 10 0" color="white" intensity="0.5"></a-light>
 
